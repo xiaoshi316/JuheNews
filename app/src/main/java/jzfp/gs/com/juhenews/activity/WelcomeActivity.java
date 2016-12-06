@@ -1,0 +1,51 @@
+package jzfp.gs.com.juhenews.activity;
+
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
+
+import jzfp.gs.com.juhenews.R;
+
+public class WelcomeActivity extends AppCompatActivity {
+
+    private TextView textViewSkip = null;
+    private Handler splashHander = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            directToHome();
+        }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_welcome);
+        textViewSkip = (TextView)findViewById(R.id.tv_skip);
+        textViewSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                splashHander.removeMessages(0);
+                directToHome();
+            }
+        });
+        splashHander.sendEmptyMessageDelayed(0, 3000);
+    }
+
+    private void directToHome() {
+        Intent intent  = new Intent();
+        intent.setClass(WelcomeActivity.this, HomeActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.scalein, R.anim.scaleout);
+        finish();
+    }
+}
