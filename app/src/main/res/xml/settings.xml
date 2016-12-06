@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="onlyloveyd"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="姓名"
+        android:key="edit_text_preference_name" />
+    <EditTextPreference
+        android:defaultValue="onlyloveyd@gmail.com"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="邮箱"
+        android:key="edit_text_preference_email" />
+    <EditTextPreference
+
+        android:defaultValue=""
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="电话号码"
+        android:key="edit_text_preference_phone" />
+    <ListPreference
+        android:defaultValue="男"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="性别"
+        android:entries="@array/sex"
+        android:entryValues="@array/sex"
+        android:key="edit_text_preference_sex" />
+    <EditTextPreference
+        android:defaultValue="湖北省武汉市洪山区华中科技大学"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="居住住址"
+        android:key="edit_text_preference_address" />
+</PreferenceScreen>

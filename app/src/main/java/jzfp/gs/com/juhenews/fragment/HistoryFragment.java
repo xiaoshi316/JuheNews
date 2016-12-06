@@ -69,6 +69,7 @@ public class HistoryFragment extends Fragment {
                 pullHistoryData();
             }
         });
+        swipeRefreshLayout.setRefreshing(true);
         pullHistoryData();
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(android.R.color.holo_blue_bright),
                 getResources().getColor(android.R.color.holo_green_light),
@@ -90,7 +91,7 @@ public class HistoryFragment extends Fragment {
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<String>() {
             @Override
             public void onNext(String response) {
-                System.err.println("yidong -- onNext");
+                swipeRefreshLayout.setRefreshing(true);
                 Gson gson = new Gson();
                 HistoryBean historyBean = gson.fromJson(response, HistoryBean.class);
                 historyAdapter.setHistory(historyBean);

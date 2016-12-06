@@ -15,7 +15,7 @@ import jzfp.gs.com.juhenews.R;
 public class WelcomeActivity extends AppCompatActivity {
 
     private TextView textViewSkip = null;
-    private Handler splashHander = new Handler(){
+    private Handler splashHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -34,11 +34,11 @@ public class WelcomeActivity extends AppCompatActivity {
         textViewSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                splashHander.removeMessages(0);
+                splashHandler.removeMessages(0);
                 directToHome();
             }
         });
-        splashHander.sendEmptyMessageDelayed(0, 3000);
+        splashHandler.sendEmptyMessageDelayed(0, 3000);
     }
 
     private void directToHome() {

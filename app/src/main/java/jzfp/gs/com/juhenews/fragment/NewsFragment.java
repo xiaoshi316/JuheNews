@@ -67,6 +67,7 @@ public class NewsFragment extends Fragment{
                 pullNewsData();
             }
         });
+        swipeRefreshLayout.setRefreshing(true);
         pullNewsData();
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(android.R.color.holo_blue_bright),
                 getResources().getColor(android.R.color.holo_green_light),
@@ -87,6 +88,7 @@ public class NewsFragment extends Fragment{
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<String>() {
             @Override
             public void onNext(String response) {
+                swipeRefreshLayout.setRefreshing(true);
                 Gson gson = new Gson();
                 NewsBean newsBean = gson.fromJson(response, NewsBean.class);
                 newsAdapter.setNews(newsBean);

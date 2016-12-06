@@ -1,5 +1,6 @@
 package jzfp.gs.com.juhenews.activity;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.adapter.MainPagerAdapter;
@@ -38,6 +40,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout = (DrawerLayout) findViewById(R.id.dl_main);
         navigationView = (NavigationView) findViewById(R.id.nv_left);
         navigationView.setNavigationItemSelectedListener(this);
+        View headerLayout = navigationView.getHeaderView(0); // 0-index header
+        headerLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                directToSettings();
+            }
+        });
 
         mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
         viewPager = (ViewPager) findViewById(R.id.vp_content);
@@ -49,6 +58,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         pagerTitleStrip.setGravity(Gravity.CENTER);
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -80,5 +90,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
         return true;
+    }
+
+
+    private void directToSettings() {
+        Intent intent = new Intent();
+        intent.setClass(this, SettingActivity.class);
+        startActivity(intent);
     }
 }
