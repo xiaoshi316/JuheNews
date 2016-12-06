@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 25
     buildToolsVersion "24.0.1"
     defaultConfig {
         applicationId "jzfp.gs.com.animationdemo"
@@ -23,6 +23,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.okhttp3:okhttp:3.5.0'
@@ -31,4 +32,8 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+    compile 'com.android.support:design:25.0.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.lygttpod:SuperTextView:1.0.7'
+    compile 'com.github.Cutta:GifView:1.1'
 }

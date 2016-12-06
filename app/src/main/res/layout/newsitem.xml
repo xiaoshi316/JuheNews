@@ -6,6 +6,7 @@
               android:padding="5dp">
     <!--标题-->
     <TextView
+        android:padding="6dp"
         android:id="@+id/tv_news_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,12 +15,12 @@
         android:textStyle="bold"/>
 
     <LinearLayout
-        android:padding="5dp"
+        android:padding="6dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:padding="5dp"
+            android:padding="2dp"
             android:scaleType="fitXY"
             android:id="@+id/iv_news_pic1"
             android:layout_width="0dp"
@@ -27,7 +28,7 @@
             android:layout_weight="1"
             />
         <ImageView
-            android:padding="5dp"
+            android:padding="2dp"
             android:scaleType="fitXY"
             android:id="@+id/iv_news_pic2"
             android:layout_width="0dp"
@@ -35,7 +36,7 @@
             android:layout_weight="1"
            />
         <ImageView
-            android:padding="5dp"
+            android:padding="2dp"
             android:scaleType="fitXY"
             android:id="@+id/iv_news_pic3"
             android:layout_width="0dp"
@@ -47,6 +48,7 @@
 
 
     <RelativeLayout
+        android:padding="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView

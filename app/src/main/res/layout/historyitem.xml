@@ -15,7 +15,6 @@
             android:id="@+id/iv_history_pic"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:contentDescription="history_image"/>
     </FrameLayout>
 
@@ -27,7 +26,6 @@
         android:padding="6dp">
 
         <TextView
-
             android:id="@+id/tv_history_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +37,6 @@
             android:id="@+id/tv_history_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_history_title"
             android:textColor="@color/colorBlack"
             android:textSize="12sp"/>
 
@@ -47,7 +44,6 @@
             android:id="@+id/tv_history_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_history_content"
             android:gravity="end"
             android:textSize="8sp"/>
     </LinearLayout>
