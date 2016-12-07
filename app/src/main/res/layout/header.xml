@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="@color/colorToolbar"
-              android:orientation="vertical"
-              android:paddingBottom="10dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorToolbar"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
 
     //引用GitHub上的开源库
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civ_profile"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -25,7 +26,7 @@
         android:text="Askmak Sharon"
         android:textColor="#FFFFFF"
         android:textSize="8pt"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -37,5 +38,5 @@
         android:text="onlyloveyd@gmail.com"
         android:textColor="#FFFFFF"
         android:textSize="8pt"
-        android:textStyle="italic"/>
+        android:textStyle="italic" />
 </LinearLayout>

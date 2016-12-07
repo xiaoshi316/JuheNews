@@ -10,28 +10,28 @@ public class NewsBean {
     private NewsResult result;
     private int errorCode;
 
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
     public String getReason() {
         return reason;
     }
 
-    public void setResult(NewsResult result) {
-        this.result = result;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public NewsResult getResult() {
         return result;
     }
 
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
+    public void setResult(NewsResult result) {
+        this.result = result;
     }
 
     public int getErrorCode() {
         return errorCode;
+    }
+
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
     }
 
 }

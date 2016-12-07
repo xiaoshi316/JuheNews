@@ -3,8 +3,7 @@
     android:repeatCount="1"
     android:repeatMode="reverse">
     <!-- BEGIN_INCLUDE(KeyframeResources) -->
-    <propertyValuesHolder
-        android:propertyName="x">
+    <propertyValuesHolder android:propertyName="x">
         <keyframe
             android:fraction="0"
             android:value="800" />

@@ -12,38 +12,38 @@ import static android.provider.MediaStore.MediaColumns.MIME_TYPE;
  */
 public class PhotoDirectoryLoader extends CursorLoader {
 
-  final String[] IMAGE_PROJECTION = {
-      Media._ID,
-      Media.DATA,
-      Media.BUCKET_ID,
-      Media.BUCKET_DISPLAY_NAME,
-      Media.DATE_ADDED,
-      Media.SIZE
-  };
+    final String[] IMAGE_PROJECTION = {
+            Media._ID,
+            Media.DATA,
+            Media.BUCKET_ID,
+            Media.BUCKET_DISPLAY_NAME,
+            Media.DATE_ADDED,
+            Media.SIZE
+    };
 
-  public PhotoDirectoryLoader(Context context, boolean showGif) {
-    super(context);
+    public PhotoDirectoryLoader(Context context, boolean showGif) {
+        super(context);
 
-    setProjection(IMAGE_PROJECTION);
-    setUri(Media.EXTERNAL_CONTENT_URI);
-    setSortOrder(Media.DATE_ADDED + " DESC");
+        setProjection(IMAGE_PROJECTION);
+        setUri(Media.EXTERNAL_CONTENT_URI);
+        setSortOrder(Media.DATE_ADDED + " DESC");
 
-    setSelection(
-        MIME_TYPE + "=? or " + MIME_TYPE + "=? or "+ MIME_TYPE + "=? " + (showGif ? ("or " + MIME_TYPE + "=?") : ""));
-    String[] selectionArgs;
-    if (showGif) {
-      selectionArgs = new String[] { "image/jpeg", "image/png", "image/jpg","image/gif" };
-    } else {
-      selectionArgs = new String[] { "image/jpeg", "image/png", "image/jpg" };
+        setSelection(
+                MIME_TYPE + "=? or " + MIME_TYPE + "=? or " + MIME_TYPE + "=? " + (showGif ? ("or " + MIME_TYPE + "=?") : ""));
+        String[] selectionArgs;
+        if (showGif) {
+            selectionArgs = new String[]{"image/jpeg", "image/png", "image/jpg", "image/gif"};
+        } else {
+            selectionArgs = new String[]{"image/jpeg", "image/png", "image/jpg"};
+        }
+        setSelectionArgs(selectionArgs);
     }
-    setSelectionArgs(selectionArgs);
-  }
 
 
-  private PhotoDirectoryLoader(Context context, Uri uri, String[] projection, String selection,
-      String[] selectionArgs, String sortOrder) {
-    super(context, uri, projection, selection, selectionArgs, sortOrder);
-  }
+    private PhotoDirectoryLoader(Context context, Uri uri, String[] projection, String selection,
+                                 String[] selectionArgs, String sortOrder) {
+        super(context, uri, projection, selection, selectionArgs, sortOrder);
+    }
 
 
 }

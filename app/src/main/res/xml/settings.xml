@@ -3,35 +3,35 @@
 
     <EditTextPreference
         android:defaultValue="onlyloveyd"
+        android:key="edit_text_preference_name"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="姓名"
-        android:key="edit_text_preference_name" />
+        android:title="姓名" />
     <EditTextPreference
         android:defaultValue="onlyloveyd@gmail.com"
+        android:key="edit_text_preference_email"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="邮箱"
-        android:key="edit_text_preference_email" />
+        android:title="邮箱" />
     <EditTextPreference
 
         android:defaultValue=""
+        android:key="edit_text_preference_phone"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="电话号码"
-        android:key="edit_text_preference_phone" />
+        android:title="电话号码" />
     <ListPreference
         android:defaultValue="男"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="性别"
         android:entries="@array/sex"
         android:entryValues="@array/sex"
-        android:key="edit_text_preference_sex" />
-    <EditTextPreference
-        android:defaultValue="湖北省武汉市洪山区华中科技大学"
+        android:key="edit_text_preference_sex"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="居住住址"
-        android:key="edit_text_preference_address" />
+        android:title="性别" />
+    <EditTextPreference
+        android:defaultValue="湖北省武汉市洪山区华中科技大学"
+        android:key="edit_text_preference_address"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="居住住址" />
 </PreferenceScreen>

@@ -6,28 +6,28 @@ public class JokeBean {
     private String reason;
     private Result result;
 
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
-    }
-
     public int getErrorCode() {
         return errorCode;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
     }
 
     public String getReason() {
         return reason;
     }
 
-    public void setResult(Result result) {
-        this.result = result;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public Result getResult() {
         return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
     }
 
 }

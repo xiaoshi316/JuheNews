@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="新闻头条" android:id="@+id/news" android:icon="@drawable/news"></item>
-    <item android:title="笑话大全" android:id="@+id/joke" android:icon="@drawable/joke"></item>
-    <item android:title="历史Today" android:id="@+id/history" android:icon="@drawable/history"></item>
+    <item
+        android:id="@+id/news"
+        android:icon="@drawable/news"
+        android:title="新闻头条"></item>
+    <item
+        android:id="@+id/joke"
+        android:icon="@drawable/joke"
+        android:title="笑话大全"></item>
+    <item
+        android:id="@+id/history"
+        android:icon="@drawable/history"
+        android:title="历史Today"></item>
 </menu>

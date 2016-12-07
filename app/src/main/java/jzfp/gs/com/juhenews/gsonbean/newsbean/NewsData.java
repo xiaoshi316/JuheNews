@@ -17,20 +17,20 @@ public class NewsData {
     private String type;//查询type，头条都属于top
     private String realtype;//新闻类型
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getTitle() {
         return title;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDate() {
         return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getAuthor_name() {
@@ -65,36 +65,36 @@ public class NewsData {
         this.thumbnail_pic_s = thumbnail_pic_s;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public String getUrl() {
         return url;
     }
 
-    public void setUniquekey(String uniquekey) {
-        this.uniquekey = uniquekey;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getUniquekey() {
         return uniquekey;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setUniquekey(String uniquekey) {
+        this.uniquekey = uniquekey;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setRealtype(String realtype) {
-        this.realtype = realtype;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getRealtype() {
         return realtype;
+    }
+
+    public void setRealtype(String realtype) {
+        this.realtype = realtype;
     }
 
     @Override

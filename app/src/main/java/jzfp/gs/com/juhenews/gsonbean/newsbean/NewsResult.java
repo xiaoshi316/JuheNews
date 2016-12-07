@@ -11,20 +11,20 @@ public class NewsResult {
     private String stat;
     private List<NewsData> data;
 
-    public void setStat(String stat) {
-        this.stat = stat;
-    }
-
     public String getStat() {
         return stat;
     }
 
-    public void setData(List<NewsData> data) {
-        this.data = data;
+    public void setStat(String stat) {
+        this.stat = stat;
     }
 
     public List<NewsData> getData() {
         return data;
+    }
+
+    public void setData(List<NewsData> data) {
+        this.data = data;
     }
 
 }

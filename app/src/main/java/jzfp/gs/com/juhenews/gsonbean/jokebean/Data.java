@@ -16,36 +16,36 @@ public class Data {
     private int unixtime;
     private String updatetime;
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public String getContent() {
         return content;
     }
 
-    public void setHashid(String hashid) {
-        this.hashid = hashid;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getHashid() {
         return hashid;
     }
 
-    public void setUnixtime(int unixtime) {
-        this.unixtime = unixtime;
+    public void setHashid(String hashid) {
+        this.hashid = hashid;
     }
 
     public int getUnixtime() {
         return unixtime;
     }
 
-    public void setUpdatetime(String updatetime) {
-        this.updatetime = updatetime;
+    public void setUnixtime(int unixtime) {
+        this.unixtime = unixtime;
     }
 
     public String getUpdatetime() {
         return updatetime;
+    }
+
+    public void setUpdatetime(String updatetime) {
+        this.updatetime = updatetime;
     }
 
 }
