@@ -6,9 +6,11 @@ import java.util.List;
 public class Result {
 
     private List<Data> data;
+
     public void setData(List<Data> data) {
         this.data = data;
     }
+
     public List<Data> getData() {
         return data;
     }

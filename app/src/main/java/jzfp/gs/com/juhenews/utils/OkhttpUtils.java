@@ -1,7 +1,9 @@
 package jzfp.gs.com.juhenews.utils;
 
 import android.text.format.Time;
+
 import java.io.IOException;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -46,7 +48,7 @@ public class OkhttpUtils {
     public static String getHistoryOnTodayURL() {
         Time time = new Time("GMT+8");
         time.setToNow();
-        return (HISTORY_URL + "&month=" + (time.month +1) + "&day=" + time.monthDay);
+        return (HISTORY_URL + "&month=" + (time.month + 1) + "&day=" + time.monthDay);
     }
 
     public static String getHistory() {

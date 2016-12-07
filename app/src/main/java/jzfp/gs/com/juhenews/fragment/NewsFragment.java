@@ -15,8 +15,8 @@ import com.google.gson.Gson;
 
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.adapter.NewsAdapter;
-import jzfp.gs.com.juhenews.utils.OkhttpUtils;
 import jzfp.gs.com.juhenews.gsonbean.newsbean.NewsBean;
+import jzfp.gs.com.juhenews.utils.OkhttpUtils;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
@@ -27,7 +27,7 @@ import rx.schedulers.Schedulers;
  * Created by lisa on 2016/12/2.
  */
 
-public class NewsFragment extends Fragment{
+public class NewsFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;

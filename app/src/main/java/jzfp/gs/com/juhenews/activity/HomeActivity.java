@@ -116,7 +116,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-
     private void directToSettings() {
         Intent intent = new Intent();
         intent.setClass(this, SettingActivity.class);

@@ -9,9 +9,11 @@ public class NewsBean {
     private String reason;
     private NewsResult result;
     private int errorCode;
+
     public void setReason(String reason) {
         this.reason = reason;
     }
+
     public String getReason() {
         return reason;
     }
@@ -19,6 +21,7 @@ public class NewsBean {
     public void setResult(NewsResult result) {
         this.result = result;
     }
+
     public NewsResult getResult() {
         return result;
     }
@@ -26,6 +29,7 @@ public class NewsBean {
     public void setErrorCode(int errorCode) {
         this.errorCode = errorCode;
     }
+
     public int getErrorCode() {
         return errorCode;
     }

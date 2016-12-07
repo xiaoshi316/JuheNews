@@ -1,10 +1,10 @@
 package jzfp.gs.com.juhenews.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,8 +56,7 @@ public class WebActivity extends AppCompatActivity {
                 }
             }
             break;
-            case R.id.share:
-            {
+            case R.id.share: {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);
                 intent.setType("text/plain");

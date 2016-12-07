@@ -16,9 +16,11 @@ public class NewsData {
     private String uniquekey;
     private String type;//查询type，头条都属于top
     private String realtype;//新闻类型
+
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getTitle() {
         return title;
     }
@@ -26,6 +28,7 @@ public class NewsData {
     public void setDate(String date) {
         this.date = date;
     }
+
     public String getDate() {
         return date;
     }
@@ -65,6 +68,7 @@ public class NewsData {
     public void setUrl(String url) {
         this.url = url;
     }
+
     public String getUrl() {
         return url;
     }
@@ -72,6 +76,7 @@ public class NewsData {
     public void setUniquekey(String uniquekey) {
         this.uniquekey = uniquekey;
     }
+
     public String getUniquekey() {
         return uniquekey;
     }
@@ -79,6 +84,7 @@ public class NewsData {
     public void setType(String type) {
         this.type = type;
     }
+
     public String getType() {
         return type;
     }
@@ -86,6 +92,7 @@ public class NewsData {
     public void setRealtype(String realtype) {
         this.realtype = realtype;
     }
+
     public String getRealtype() {
         return realtype;
     }

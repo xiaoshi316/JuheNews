@@ -85,7 +85,6 @@ public class HistoryBean {
         }
 
 
-
         public String get_id() {
             return _id;
         }

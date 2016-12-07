@@ -15,8 +15,8 @@ import com.google.gson.Gson;
 
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.adapter.HistoryAdapter;
-import jzfp.gs.com.juhenews.utils.OkhttpUtils;
 import jzfp.gs.com.juhenews.gsonbean.historybean.HistoryBean;
+import jzfp.gs.com.juhenews.utils.OkhttpUtils;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;

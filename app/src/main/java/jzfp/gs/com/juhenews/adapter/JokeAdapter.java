@@ -18,6 +18,7 @@ import jzfp.gs.com.juhenews.gsonbean.jokebean.JokeBean;
 
 public class JokeAdapter extends RecyclerView.Adapter {
     List<Data> jokeData;
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.jokeitem, null, false);
@@ -26,15 +27,15 @@ public class JokeAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if(holder instanceof JokeViewHolder && jokeData!= null) {
-            ((JokeViewHolder)holder).getContentView().setText(jokeData.get(position).getContent());
-            ((JokeViewHolder)holder).getUpdateTimeView().setText(jokeData.get(position).getUpdatetime());
+        if (holder instanceof JokeViewHolder && jokeData != null) {
+            ((JokeViewHolder) holder).getContentView().setText(jokeData.get(position).getContent());
+            ((JokeViewHolder) holder).getUpdateTimeView().setText(jokeData.get(position).getUpdatetime());
         }
     }
 
     @Override
     public int getItemCount() {
-        if(jokeData!= null) return jokeData.size();
+        if (jokeData != null) return jokeData.size();
         return 0;
     }
 
@@ -43,7 +44,7 @@ public class JokeAdapter extends RecyclerView.Adapter {
         notifyDataSetChanged();
     }
 
-    class JokeViewHolder extends RecyclerView.ViewHolder{
+    class JokeViewHolder extends RecyclerView.ViewHolder {
         TextView content;
         TextView updateTime;
 
@@ -53,7 +54,7 @@ public class JokeAdapter extends RecyclerView.Adapter {
             updateTime = (TextView) itemView.findViewById(R.id.tv_currenttime);
         }
 
-        public TextView getContentView(){
+        public TextView getContentView() {
             return content;
         }
 
