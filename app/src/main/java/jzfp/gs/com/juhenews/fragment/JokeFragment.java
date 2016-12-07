@@ -78,7 +78,6 @@ public class JokeFragment extends Fragment {
             @Override
             public void call(Subscriber<? super String> subscriber) {
                 String response = OkhttpUtils.getJokes();
-                System.err.println("yidong -- joke = " + response);
                 subscriber.onNext(response);
                 subscriber.onCompleted();
             }

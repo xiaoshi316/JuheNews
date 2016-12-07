@@ -35,7 +35,6 @@ public class HistoryAdapter extends RecyclerView.Adapter {
         if (holder instanceof HistoryViewHolder && historyData != null) {
             HistoryViewHolder historyViewHolder = (HistoryViewHolder) holder;
             HistoryBean.ResultBean resultBean = historyData.get(position);
-            System.err.println("yidong -- data = " + resultBean.toString());
 
             historyViewHolder.title.setText(resultBean.getTitle());
             historyViewHolder.content.setText(resultBean.getDes());

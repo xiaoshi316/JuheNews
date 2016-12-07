@@ -80,7 +80,6 @@ public class HistoryFragment extends Fragment {
             @Override
             public void call(Subscriber<? super String> subscriber) {
                 String response = OkhttpUtils.getHistory();
-                System.err.println("yidong -- history = " + response);
                 subscriber.onNext(response);
                 subscriber.onCompleted();
             }
