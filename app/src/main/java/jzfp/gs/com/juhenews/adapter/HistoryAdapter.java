@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import jzfp.gs.com.juhenews.R;
@@ -40,12 +42,9 @@ public class HistoryAdapter extends RecyclerView.Adapter {
             historyViewHolder.date.setText(resultBean.getYear() + "年" + resultBean.getMonth() + "月" + resultBean.getDay() + "日  " + resultBean.getLunar());
 
             String pic = resultBean.getPic();
-            System.err.println("yidong -- pic = " + pic);
             if (pic != null && !pic.isEmpty()) {
-                historyViewHolder.pic.setVisibility(View.GONE);
-                //historyViewHolder.pic.setVisibility(View.VISIBLE);
-                //int width = PublicTools.getDisplayMetric(context).widthPixels;
-                //Picasso.with(context).load(pic).into(historyViewHolder.pic);
+                historyViewHolder.pic.setVisibility(View.VISIBLE);
+                Picasso.with(context).load(pic).into(historyViewHolder.pic);
             } else {
                 historyViewHolder.pic.setVisibility(View.GONE);
             }
