@@ -1,9 +1,13 @@
 package jzfp.gs.com.juhenews.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +27,8 @@ import me.iwf.photopicker.PhotoPicker;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private CircleImageView circleImageViewProfile = null;
+    private SharedPreferences sharedPreferences = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +39,23 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         setSupportActionBar(toolbar);
         toolbar.setTitleTextAppearance(this, R.style.ToolBarTextAppearance);
 
-        CircleImageView circleImageView = (CircleImageView)findViewById(R.id.civ_image);
-        circleImageView.setOnClickListener(this);
+
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);//getSharedPreferences("jzfp.gs.com.juhenews_preferences.xml", MODE_PRIVATE);
+
+        circleImageViewProfile = (CircleImageView)findViewById(R.id.civ_image);
+        circleImageViewProfile.setOnClickListener(this);
+        String imagepath = sharedPreferences.getString("PROFILE", null);
+        if(imagepath!= null){
+            File file = new File(imagepath);
+            if(file.exists()) {
+                Bitmap bitmap = BitmapFactory.decodeFile(imagepath);
+                circleImageViewProfile.setImageBitmap(bitmap);
+            }
+        }
 
         SettingFragment settingFragment = SettingFragment.newInstance();
         getFragmentManager().beginTransaction().replace(R.id.fl_content, settingFragment).commit();
-
 
     }
 
@@ -84,12 +101,21 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        System.err.println("yidong -- requestcode = " + requestCode + " resultCode = " + resultCode
-        + " data = " + data);
-        if(requestCode== PhotoPicker.REQUEST_CODE && requestCode == RESULT_OK && data!= null) {
+        if(requestCode== PhotoPicker.REQUEST_CODE && resultCode == RESULT_OK && data!= null) {
             ArrayList<String> photos =
                     data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-            System.err.println("yidong photos = " + photos);
+            String path = photos.get(0);
+            File file = new File(path);
+            if(file.exists()) {
+               Bitmap bitmap =  BitmapFactory.decodeFile(path);
+                circleImageViewProfile.setImageBitmap(bitmap);
+                if(sharedPreferences!= null) {
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("PROFILE", path);
+                    editor.commit();
+                }
+            }
+
 
         }
     }

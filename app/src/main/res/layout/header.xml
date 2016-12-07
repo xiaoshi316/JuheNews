@@ -11,6 +11,7 @@
         android:id="@+id/civ_profile"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal|center_vertical"
         android:src="@mipmap/ic_launcher"/>
 
