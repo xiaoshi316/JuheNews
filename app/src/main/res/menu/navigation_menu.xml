@@ -5,14 +5,17 @@
             android:id="@+id/news"
             android:icon="@drawable/news"
             android:title="新闻头条"></item>
+
         <item
             android:id="@+id/joke"
             android:icon="@drawable/joke"
-            android:title="趣  图"></item>
+            android:title="笑话大全"></item>
+
         <item
             android:id="@+id/funny"
             android:icon="@drawable/funny"
-            android:title="笑话大全"></item>
+            android:title="趣  图"></item>
+
         <item
             android:id="@+id/history"
             android:icon="@drawable/history"

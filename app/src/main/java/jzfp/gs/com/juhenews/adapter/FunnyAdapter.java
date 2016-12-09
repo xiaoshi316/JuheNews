@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,7 +37,6 @@ public class FunnyAdapter extends RecyclerView.Adapter {
             FunnyBean.ResultBean.DataBean resultBean = funnyData.get(position);
 
             funnyViewHolder.content.setText(resultBean.getContent());
-            //historyViewHolder.content.setText(resultBean.getDes());
             funnyViewHolder.date.setText(resultBean.getUpdatetime());
 
             String pic = resultBean.getUrl();
@@ -73,6 +71,5 @@ public class FunnyAdapter extends RecyclerView.Adapter {
             date = (TextView) itemView.findViewById(R.id.tv_funny_date);
             gif = (ImageView) itemView.findViewById(R.id.gv_funny_gif);
         }
-
     }
 }

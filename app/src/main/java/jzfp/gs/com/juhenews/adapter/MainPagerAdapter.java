@@ -15,7 +15,7 @@ import jzfp.gs.com.juhenews.fragment.NewsFragment;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
 
-    public static final String[] titles = {"头条", " 笑话", "趣图","历史上的今天"};
+    public static final String[] titles = {"头条", " 笑话", "趣图","今天"};
 
     public MainPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -31,7 +31,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 return FunnyFragment.newInstance("趣图");
             case 3:
-                return HistoryFragment.newInstance("历史上的今天");
+                return HistoryFragment.newInstance("今天");
             default:
                 break;
         }
