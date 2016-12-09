@@ -123,18 +123,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         textViewName.setText(name);
         String email = sp.getString(options[2], null);
         textViewEmail.setText(email);
-
-        switch(viewPager.getCurrentItem()) {
-            case 0: navigationView.setCheckedItem(R.id.news);
-                break;
-            case 1: navigationView.setCheckedItem(R.id.joke);
-                break;
-            case 2: navigationView.setCheckedItem(R.id.history);
-                break;
-            default:
-                break;
-        }
-
     }
 
     @Override
