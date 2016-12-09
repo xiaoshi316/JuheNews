@@ -19,6 +19,6 @@
         <item
             android:id="@+id/history"
             android:icon="@drawable/history"
-            android:title="历史Today"></item>
+            android:title="历史上的今天"></item>
     </group>
 </menu>
