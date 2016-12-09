@@ -8,9 +8,9 @@
 </br></br>
 <font color=bule size=5>目前效果图</font></br></br>
 
-![实际效果图](https://github.com/onlyloveyd/JuheNews/tree/master/gif/GIF1.gif)
-![实际效果图](https://github.com/onlyloveyd/JuheNews/tree/master/gif/GIF2.gif)
-![实际效果图](https://github.com/onlyloveyd/JuheNews/tree/master/gif/GIF3.gif)
-![实际效果图](https://github.com/onlyloveyd/JuheNews/tree/master/gif/GIF4.gif)
-![实际效果图](https://github.com/onlyloveyd/JuheNews/tree/master/gif/GIF5.gif)
+![实际效果图](https://github.com/onlyloveyd/JuheNews/blob/master/gif/GIF1.gif)
+![实际效果图](https://github.com/onlyloveyd/JuheNews/blob/master/gif/GIF2.gif)
+![实际效果图](https://github.com/onlyloveyd/JuheNews/blob/master/gif/GIF3.gif)
+![实际效果图](https://github.com/onlyloveyd/JuheNews/blob/master/gif/GIF4.gif)
+![实际效果图](https://github.com/onlyloveyd/JuheNews/blob/master/gif/GIF5.gif)
 
