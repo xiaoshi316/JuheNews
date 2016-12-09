@@ -72,7 +72,6 @@ public class FunnyAdapter extends RecyclerView.Adapter {
             content = (TextView) itemView.findViewById(R.id.tv_funny_title);
             date = (TextView) itemView.findViewById(R.id.tv_funny_date);
             gif = (ImageView) itemView.findViewById(R.id.gv_funny_gif);
-
         }
 
     }
