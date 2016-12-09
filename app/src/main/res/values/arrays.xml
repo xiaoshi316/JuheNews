@@ -5,4 +5,13 @@
         <item>男</item>
         <item>女</item>
     </string-array>
+
+    <string-array name="setting_options">
+        <item>姓名</item>
+        <item>年龄</item>
+        <item>邮箱</item>
+        <item>电话号码</item>
+        <item>居住地址</item>
+    </string-array>
+
 </resources>

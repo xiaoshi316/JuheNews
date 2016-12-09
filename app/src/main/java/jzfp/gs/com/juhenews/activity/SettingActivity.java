@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import jzfp.gs.com.juhenews.R;
-import jzfp.gs.com.juhenews.fragment.SettingFragment;
+import jzfp.gs.com.juhenews.fragment.SettingsFragment2;
 import me.iwf.photopicker.PhotoPicker;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
@@ -50,8 +50,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             }
         }
 
-        SettingFragment settingFragment = SettingFragment.newInstance();
-        getFragmentManager().beginTransaction().replace(R.id.fl_content, settingFragment).commit();
+        SettingsFragment2 settingFragment = SettingsFragment2.newInstance();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, settingFragment).commit();
 
     }
 

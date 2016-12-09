@@ -5,27 +5,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_content"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.v4.view.PagerTitleStrip
-            android:id="@+id/pts"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_title"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="top"
-            android:background="@color/colorToolbar"></android.support.v4.view.PagerTitleStrip>
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbar"
+            app:tabIndicatorColor="@color/colorTabNormal"
+            app:tabSelectedTextColor="@color/colorWhite"
+            app:tabTextColor="@color/colorBlack" />
 
-    </android.support.v4.view.ViewPager>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--<android.support.v4.view.PagerTitleStrip-->
+            <!--android:id="@+id/pts"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_gravity="top"-->
+            <!--android:background="@color/colorToolbar"></android.support.v4.view.PagerTitleStrip>-->
+
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
-
         android:id="@+id/nv_left"
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
         app:menu="@menu/navigation_menu"></android.support.design.widget.NavigationView>
+
 
 </android.support.v4.widget.DrawerLayout>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -33,12 +34,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout = null;
     private CircleImageView circleImageView = null;
     private TextView textViewName = null, textViewEmail = null;
+    private TabLayout tabLayout = null;
+    private String[] options = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        options = getResources().getStringArray(R.array.setting_options);
         drawerLayout = (DrawerLayout) findViewById(R.id.dl_main);
         navigationView = (NavigationView) findViewById(R.id.nv_left);
         navigationView.setNavigationItemSelectedListener(this);
@@ -58,10 +62,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         viewPager = (ViewPager) findViewById(R.id.vp_content);
         viewPager.setAdapter(mainPagerAdapter);
 
-        pagerTitleStrip = (PagerTitleStrip) findViewById(R.id.pts);
-        pagerTitleStrip.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
-        pagerTitleStrip.setTextColor(getResources().getColor(R.color.colorWhite));
-        pagerTitleStrip.setGravity(Gravity.CENTER);
+        tabLayout = (TabLayout)findViewById(R.id.tab_title);
+        //设置TabLayout的模式
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        //为TabLayout添加tab名称
+        tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[0]));
+        tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[1]));
+        tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[2]));
+        tabLayout.setupWithViewPager(viewPager);
+
+//        pagerTitleStrip = (PagerTitleStrip) findViewById(R.id.pts);
+//        pagerTitleStrip.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+//        pagerTitleStrip.setTextColor(getResources().getColor(R.color.colorWhite));
+//        pagerTitleStrip.setGravity(Gravity.CENTER);
 
     }
 
@@ -77,9 +90,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 circleImageView.setImageBitmap(bitmap);
             }
         }
-        String name = sp.getString("edit_text_preference_name", null);
+        String name = sp.getString(options[0], null);
         textViewName.setText(name);
-        String email = sp.getString("edit_text_preference_email", null);
+        String email = sp.getString(options[2], null);
         textViewEmail.setText(email);
 
     }

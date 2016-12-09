@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import jzfp.gs.com.juhenews.R;
@@ -31,6 +32,9 @@ public class WebActivity extends AppCompatActivity {
         toolbar.setTitleTextAppearance(this, R.style.ToolBarTextAppearance);
 
         WebView webView = (WebView) findViewById(R.id.wv_content);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
         webView.loadUrl(URL);
 
     }
