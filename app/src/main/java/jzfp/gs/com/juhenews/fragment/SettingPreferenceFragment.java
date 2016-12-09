@@ -12,13 +12,13 @@ import jzfp.gs.com.juhenews.R;
  * Created by lisa on 2016/12/6.
  */
 
-public class SettingFragment extends PreferenceFragment {
+public class SettingPreferenceFragment extends PreferenceFragment {
 
-    public static SettingFragment newInstance() {
+    public static SettingPreferenceFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        SettingFragment fragment = new SettingFragment();
+        SettingPreferenceFragment fragment = new SettingPreferenceFragment();
         fragment.setArguments(args);
         return fragment;
     }

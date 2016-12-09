@@ -12,11 +12,11 @@
         app:cardElevation="0dp">
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:paddingLeft="8dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp">
 
             <TextView
 
@@ -24,8 +24,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
-                android:textSize="16sp"
-                android:text="adfksldkfalskdlklfaksdl" />
+                android:text="adfksldkfalskdlklfaksdl"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.io.File;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import jzfp.gs.com.juhenews.R;
@@ -29,13 +30,28 @@ import jzfp.gs.com.juhenews.adapter.MainPagerAdapter;
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ViewPager viewPager = null;
     private MainPagerAdapter mainPagerAdapter = null;
-    private PagerTitleStrip pagerTitleStrip = null;
     private NavigationView navigationView = null;
     private DrawerLayout drawerLayout = null;
     private CircleImageView circleImageView = null;
     private TextView textViewName = null, textViewEmail = null;
     private TabLayout tabLayout = null;
     private String[] options = null;
+    public static final HashMap<Integer, Integer> sPageMenuMap = new HashMap<Integer, Integer>(){
+        {
+            put(0, R.id.news);
+            put(1, R.id.joke);
+            put(2, R.id.history);
+        }
+    };
+
+    public static final HashMap<Integer, Integer> sMenuPageMap = new HashMap<Integer, Integer>(){
+        {
+            put(R.id.news, 0);
+            put(R.id.joke,1);
+            put(R.id.history,2);
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +60,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         options = getResources().getStringArray(R.array.setting_options);
         drawerLayout = (DrawerLayout) findViewById(R.id.dl_main);
+
         navigationView = (NavigationView) findViewById(R.id.nv_left);
         navigationView.setNavigationItemSelectedListener(this);
+
         View headerLayout = navigationView.getHeaderView(0); // 0-index header
         circleImageView = (CircleImageView) headerLayout.findViewById(R.id.civ_profile);
         textViewName = (TextView) headerLayout.findViewById(R.id.tv_name);
@@ -61,6 +79,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
         viewPager = (ViewPager) findViewById(R.id.vp_content);
         viewPager.setAdapter(mainPagerAdapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                navigationView.setCheckedItem(sPageMenuMap.get(viewPager.getCurrentItem()));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         tabLayout = (TabLayout)findViewById(R.id.tab_title);
         //设置TabLayout的模式
@@ -70,11 +104,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[1]));
         tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[2]));
         tabLayout.setupWithViewPager(viewPager);
-
-//        pagerTitleStrip = (PagerTitleStrip) findViewById(R.id.pts);
-//        pagerTitleStrip.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
-//        pagerTitleStrip.setTextColor(getResources().getColor(R.color.colorWhite));
-//        pagerTitleStrip.setGravity(Gravity.CENTER);
 
     }
 
@@ -95,6 +124,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         String email = sp.getString(options[2], null);
         textViewEmail.setText(email);
 
+        switch(viewPager.getCurrentItem()) {
+            case 0: navigationView.setCheckedItem(R.id.news);
+                break;
+            case 1: navigationView.setCheckedItem(R.id.joke);
+                break;
+            case 2: navigationView.setCheckedItem(R.id.history);
+                break;
+            default:
+                break;
+        }
+
     }
 
     @Override
@@ -113,19 +153,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
             drawerLayout.closeDrawers();
         }
-        switch (item.getItemId()) {
-            case R.id.news:
-                viewPager.setCurrentItem(0);
-                break;
-            case R.id.joke:
-                viewPager.setCurrentItem(1);
-                break;
-            case R.id.history:
-                viewPager.setCurrentItem(2);
-                break;
-            default:
-                break;
-        }
+        viewPager.setCurrentItem(sMenuPageMap.get(item.getItemId()));
         return true;
     }
 

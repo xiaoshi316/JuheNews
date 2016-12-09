@@ -32,6 +32,7 @@ public class WebActivity extends AppCompatActivity {
         toolbar.setTitleTextAppearance(this, R.style.ToolBarTextAppearance);
 
         WebView webView = (WebView) findViewById(R.id.wv_content);
+        webView.clearCache(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);

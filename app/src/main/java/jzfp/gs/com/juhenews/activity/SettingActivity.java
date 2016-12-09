@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import jzfp.gs.com.juhenews.R;
-import jzfp.gs.com.juhenews.fragment.SettingsFragment2;
+import jzfp.gs.com.juhenews.fragment.SettingsFragment;
 import me.iwf.photopicker.PhotoPicker;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,7 +29,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_setting_preference);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.back);
@@ -50,7 +50,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             }
         }
 
-        SettingsFragment2 settingFragment = SettingsFragment2.newInstance();
+        SettingsFragment settingFragment = SettingsFragment.newInstance();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, settingFragment).commit();
 

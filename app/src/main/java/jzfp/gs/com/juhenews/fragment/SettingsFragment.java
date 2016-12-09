@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.adapter.SettingsAdapter;
@@ -17,14 +16,14 @@ import jzfp.gs.com.juhenews.adapter.SettingsAdapter;
  * Created by lisa on 2016/12/9.
  */
 
-public class SettingsFragment2 extends Fragment {
+public class SettingsFragment extends Fragment {
     private RecyclerView recyclerView = null;
 
-    public static SettingsFragment2 newInstance() {
+    public static SettingsFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        SettingsFragment2 fragment = new SettingsFragment2();
+        SettingsFragment fragment = new SettingsFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -33,7 +32,7 @@ public class SettingsFragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_settings_backup, container, false);
+        View view = inflater.inflate(R.layout.activity_settings, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.tv_settings);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
