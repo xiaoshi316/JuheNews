@@ -12,5 +12,5 @@
     <color name="colorTabSelected">#ffffff</color>
     <color name="colorComment">#888888</color>
     <color name="colorNavigationBg">#2b2f3e</color>
-    <color name="colorSkipBg">#33888888</color>
+    <color name="colorSkipBg">#33f6f5f4</color>
 </resources>

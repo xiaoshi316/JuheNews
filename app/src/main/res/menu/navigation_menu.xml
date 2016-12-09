@@ -8,6 +8,10 @@
         <item
             android:id="@+id/joke"
             android:icon="@drawable/joke"
+            android:title="趣  图"></item>
+        <item
+            android:id="@+id/funny"
+            android:icon="@drawable/funny"
             android:title="笑话大全"></item>
         <item
             android:id="@+id/history"

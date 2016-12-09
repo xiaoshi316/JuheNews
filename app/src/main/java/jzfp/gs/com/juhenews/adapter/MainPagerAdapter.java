@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import jzfp.gs.com.juhenews.fragment.FunnyFragment;
 import jzfp.gs.com.juhenews.fragment.HistoryFragment;
 import jzfp.gs.com.juhenews.fragment.JokeFragment;
 import jzfp.gs.com.juhenews.fragment.NewsFragment;
@@ -14,7 +15,7 @@ import jzfp.gs.com.juhenews.fragment.NewsFragment;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
 
-    public static final String[] titles = {"新闻头条", " 笑话大全", "历史上的今天"};
+    public static final String[] titles = {"头条", " 笑话", "趣图","历史上的今天"};
 
     public MainPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -24,10 +25,12 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return NewsFragment.newInstance("新闻");
+                return NewsFragment.newInstance("头条");
             case 1:
-                return JokeFragment.newInstance("笑话大全");
+                return JokeFragment.newInstance("笑话");
             case 2:
+                return FunnyFragment.newInstance("趣图");
+            case 3:
                 return HistoryFragment.newInstance("历史上的今天");
             default:
                 break;

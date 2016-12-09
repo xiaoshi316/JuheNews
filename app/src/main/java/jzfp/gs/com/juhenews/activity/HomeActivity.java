@@ -40,7 +40,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         {
             put(0, R.id.news);
             put(1, R.id.joke);
-            put(2, R.id.history);
+            put(2, R.id.funny);
+            put(3, R.id.history);
         }
     };
 
@@ -48,7 +49,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         {
             put(R.id.news, 0);
             put(R.id.joke,1);
-            put(R.id.history,2);
+            put(R.id.funny,2);
+            put(R.id.history,3);
         }
     };
 
@@ -103,6 +105,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[0]));
         tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[1]));
         tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[2]));
+        tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[3]));
         tabLayout.setupWithViewPager(viewPager);
 
     }
