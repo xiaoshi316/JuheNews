@@ -9,11 +9,9 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +26,22 @@ import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.adapter.MainPagerAdapter;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    public static final HashMap<Integer, Integer> sPageMenuMap = new HashMap<Integer, Integer>() {
+        {
+            put(0, R.id.news);
+            put(1, R.id.joke);
+            put(2, R.id.funny);
+            put(3, R.id.history);
+        }
+    };
+    public static final HashMap<Integer, Integer> sMenuPageMap = new HashMap<Integer, Integer>() {
+        {
+            put(R.id.news, 0);
+            put(R.id.joke, 1);
+            put(R.id.funny, 2);
+            put(R.id.history, 3);
+        }
+    };
     private ViewPager viewPager = null;
     private MainPagerAdapter mainPagerAdapter = null;
     private NavigationView navigationView = null;
@@ -36,24 +50,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private TextView textViewName = null, textViewEmail = null;
     private TabLayout tabLayout = null;
     private String[] options = null;
-    public static final HashMap<Integer, Integer> sPageMenuMap = new HashMap<Integer, Integer>(){
-        {
-            put(0, R.id.news);
-            put(1, R.id.joke);
-            put(2, R.id.funny);
-            put(3, R.id.history);
-        }
-    };
-
-    public static final HashMap<Integer, Integer> sMenuPageMap = new HashMap<Integer, Integer>(){
-        {
-            put(R.id.news, 0);
-            put(R.id.joke,1);
-            put(R.id.funny,2);
-            put(R.id.history,3);
-        }
-    };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +94,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        tabLayout = (TabLayout)findViewById(R.id.tab_title);
+        tabLayout = (TabLayout) findViewById(R.id.tab_title);
         //设置TabLayout的模式
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         //为TabLayout添加tab名称

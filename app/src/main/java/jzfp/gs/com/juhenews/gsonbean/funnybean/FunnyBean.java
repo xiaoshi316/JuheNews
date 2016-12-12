@@ -108,7 +108,6 @@ public class FunnyBean {
             }
 
 
-
             public static List<DataBean> arrayDataBeanFromData(String str) {
 
                 Type listType = new TypeToken<ArrayList<DataBean>>() {
