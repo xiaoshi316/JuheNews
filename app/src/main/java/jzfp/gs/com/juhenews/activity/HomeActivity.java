@@ -26,7 +26,7 @@ import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.adapter.MainPagerAdapter;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    public static final HashMap<Integer, Integer> sPageMenuMap = new HashMap<Integer, Integer>() {
+    private static final HashMap<Integer, Integer> sPageMenuMap = new HashMap<Integer, Integer>() {
         {
             put(0, R.id.news);
             put(1, R.id.joke);
@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             put(3, R.id.history);
         }
     };
-    public static final HashMap<Integer, Integer> sMenuPageMap = new HashMap<Integer, Integer>() {
+    private static final HashMap<Integer, Integer> sMenuPageMap = new HashMap<Integer, Integer>() {
         {
             put(R.id.news, 0);
             put(R.id.joke, 1);
@@ -43,12 +43,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
     };
     private ViewPager viewPager = null;
-    private MainPagerAdapter mainPagerAdapter = null;
     private NavigationView navigationView = null;
     private DrawerLayout drawerLayout = null;
     private CircleImageView circleImageView = null;
     private TextView textViewName = null, textViewEmail = null;
-    private TabLayout tabLayout = null;
     private String[] options = null;
 
     @Override
@@ -74,7 +72,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
         viewPager = (ViewPager) findViewById(R.id.vp_content);
         viewPager.setAdapter(mainPagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -94,7 +92,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        tabLayout = (TabLayout) findViewById(R.id.tab_title);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_title);
         //设置TabLayout的模式
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         //为TabLayout添加tab名称
@@ -128,11 +126,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

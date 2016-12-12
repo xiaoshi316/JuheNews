@@ -6,8 +6,6 @@
     android:orientation="vertical"
     android:paddingBottom="10dp">
 
-    //引用GitHub上的开源库
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civ_profile"
         android:layout_width="100dp"
@@ -20,10 +18,8 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/civ_profile"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="Askmak Sharon"
         android:textColor="#FFFFFF"
         android:textSize="8pt"
         android:textStyle="bold" />
@@ -32,10 +28,8 @@
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_name"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="onlyloveyd@gmail.com"
         android:textColor="#FFFFFF"
         android:textSize="8pt"
         android:textStyle="italic" />

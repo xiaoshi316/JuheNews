@@ -10,8 +10,8 @@ android {
     buildToolsVersion "24.0.1"
     defaultConfig {
         applicationId "jzfp.gs.com.juhenews"
-        minSdkVersion 15
-        targetSdkVersion 24
+        minSdkVersion 16
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -39,6 +39,9 @@ android {
 
         }
     }
+    lintOptions {
+        abortOnError true
+    }
 }
 
 dependencies {
@@ -46,7 +49,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //noinspection GradleCompatible
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:25.0.1'
     compile project(':PhotoPicker')
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.okhttp3:okhttp:3.5.0'

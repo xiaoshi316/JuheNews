@@ -7,7 +7,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/colorToolbar"></android.support.v7.widget.Toolbar>
+        android:background="@color/colorToolbar"/>
 
     <WebView
         android:id="@+id/wv_content"

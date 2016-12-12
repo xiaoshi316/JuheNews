@@ -11,6 +11,7 @@ import jzfp.gs.com.juhenews.fragment.NewsFragment;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
@@ -25,13 +26,13 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return NewsFragment.newInstance("头条");
+                return NewsFragment.newInstance();
             case 1:
-                return JokeFragment.newInstance("笑话");
+                return JokeFragment.newInstance();
             case 2:
-                return FunnyFragment.newInstance("趣图");
+                return FunnyFragment.newInstance();
             case 3:
-                return HistoryFragment.newInstance("今天");
+                return HistoryFragment.newInstance();
             default:
                 break;
         }

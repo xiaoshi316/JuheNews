@@ -2,6 +2,7 @@ package jzfp.gs.com.juhenews.gsonbean.newsbean;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
 import java.util.List;

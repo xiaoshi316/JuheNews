@@ -14,10 +14,10 @@ import jzfp.gs.com.juhenews.adapter.SettingsAdapter;
 
 /**
  * Created by lisa on 2016/12/9.
+ * Email: 457420045@qq.com
  */
 
 public class SettingsFragment extends Fragment {
-    private RecyclerView recyclerView = null;
 
     public static SettingsFragment newInstance() {
 
@@ -33,7 +33,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_settings, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.tv_settings);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.tv_settings);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         SettingsAdapter settingsAdapter = new SettingsAdapter(getContext(), getResources().getStringArray(R.array.setting_options));

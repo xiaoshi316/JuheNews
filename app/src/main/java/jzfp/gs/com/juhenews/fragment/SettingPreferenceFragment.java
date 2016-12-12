@@ -10,6 +10,7 @@ import jzfp.gs.com.juhenews.R;
 
 /**
  * Created by lisa on 2016/12/6.
+ * Email: 457420045@qq.com
  */
 
 public class SettingPreferenceFragment extends PreferenceFragment {

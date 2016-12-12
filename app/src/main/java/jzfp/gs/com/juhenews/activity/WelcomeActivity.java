@@ -14,8 +14,7 @@ import jzfp.gs.com.juhenews.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    private TextView textViewSkip = null;
-    private Handler splashHandler = new Handler() {
+    private  final Handler splashHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -30,7 +29,7 @@ public class WelcomeActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_welcome);
-        textViewSkip = (TextView) findViewById(R.id.tv_skip);
+        TextView textViewSkip = (TextView) findViewById(R.id.tv_skip);
         textViewSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

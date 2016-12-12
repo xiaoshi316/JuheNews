@@ -24,18 +24,18 @@ import rx.schedulers.Schedulers;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
+@SuppressWarnings("deprecation")
 public class HistoryFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
-    private RecyclerView recyclerView;
-    private StaggeredGridLayoutManager staggeredGridLayoutManager;
     private HistoryAdapter historyAdapter;
 
     /*
      * new instance 方法 HistoryFragment
      */
-    public static HistoryFragment newInstance(String params) {
+    public static HistoryFragment newInstance() {
         Bundle args = new Bundle();
         HistoryFragment fragment = new HistoryFragment();
         fragment.setArguments(args);
@@ -48,10 +48,10 @@ public class HistoryFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         //      create main panel for fragment
-        View view = inflater.inflate(R.layout.base_fragment, null, false);
+        View view = inflater.inflate(R.layout.base_fragment, container, false);
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
-        recyclerView = (RecyclerView) view.findViewById(R.id.tv_content);
-        staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.tv_content);
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
 
         historyAdapter = new HistoryAdapter();
 
@@ -75,7 +75,7 @@ public class HistoryFragment extends Fragment {
 
 
     /*获取头条信息*/
-    public void pullHistoryData() {
+    private void pullHistoryData() {
         Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {

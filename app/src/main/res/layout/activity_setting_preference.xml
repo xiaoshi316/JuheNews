@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/colorToolbar"></android.support.v7.widget.Toolbar>
+        android:background="@color/colorToolbar"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civ_image"
@@ -27,6 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/civ_image"
-        android:layout_marginTop="10dp"></FrameLayout>
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>

@@ -3,12 +3,6 @@
  */
 package jzfp.gs.com.juhenews.gsonbean.jokebean;
 
-/**
- * Auto-generated: 2016-12-02 10:31:9
- *
- * @author aTool.org (i@aTool.org)
- * @website http://www.atool.org/json2javabean.php
- */
 public class Data {
 
     private String content;

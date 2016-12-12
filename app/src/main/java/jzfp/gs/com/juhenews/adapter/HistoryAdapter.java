@@ -17,11 +17,12 @@ import jzfp.gs.com.juhenews.gsonbean.historybean.HistoryBean;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
 public class HistoryAdapter extends RecyclerView.Adapter {
-    List<HistoryBean.ResultBean> historyData;
-    Context context;
+    private List<HistoryBean.ResultBean> historyData;
+    private Context context;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -62,8 +63,10 @@ public class HistoryAdapter extends RecyclerView.Adapter {
     }
 
     class HistoryViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, content, date;
-        public ImageView pic;
+        public final TextView title;
+        public final TextView content;
+        public final TextView date;
+        public final ImageView pic;
 
 
         public HistoryViewHolder(View itemView) {

@@ -24,18 +24,18 @@ import rx.schedulers.Schedulers;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
+@SuppressWarnings("deprecation")
 public class JokeFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
-    private RecyclerView recyclerView;
-    private LinearLayoutManager linearLayoutManager;
     private JokeAdapter jokeAdapter;
 
     /*
      * new instance 方法 获取JokeFragment
      */
-    public static JokeFragment newInstance(String params) {
+    public static JokeFragment newInstance() {
         Bundle args = new Bundle();
         JokeFragment fragment = new JokeFragment();
         fragment.setArguments(args);
@@ -48,10 +48,10 @@ public class JokeFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         //      create main panel for fragment
-        View view = inflater.inflate(R.layout.base_fragment, null, false);
+        View view = inflater.inflate(R.layout.base_fragment, container, false);
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
-        recyclerView = (RecyclerView) view.findViewById(R.id.tv_content);
-        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.tv_content);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         jokeAdapter = new JokeAdapter();
 
         recyclerView.setLayoutManager(linearLayoutManager);

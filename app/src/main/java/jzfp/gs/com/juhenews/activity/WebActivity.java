@@ -24,7 +24,13 @@ public class WebActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        URL = bundle.getBundle("extra").getString("URL");
+        if(bundle!=null) {
+            Bundle temp = bundle.getBundle("extra");
+            if(temp!= null) {
+                URL = temp.getString("URL");
+            }
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

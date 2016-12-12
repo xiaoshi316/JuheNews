@@ -24,18 +24,17 @@ import rx.schedulers.Schedulers;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
 public class NewsFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
-    private RecyclerView recyclerView;
-    private LinearLayoutManager linearLayoutManager;
     private NewsAdapter newsAdapter;
 
     /*
      * new instance 方法 获取JokeFragment
      */
-    public static NewsFragment newInstance(String params) {
+    public static NewsFragment newInstance() {
         Bundle args = new Bundle();
         NewsFragment fragment = new NewsFragment();
         fragment.setArguments(args);
@@ -48,10 +47,10 @@ public class NewsFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         //      create main panel for fragment
-        View view = inflater.inflate(R.layout.base_fragment, null, false);
+        View view = inflater.inflate(R.layout.base_fragment, container, false);
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
-        recyclerView = (RecyclerView) view.findViewById(R.id.tv_content);
-        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.tv_content);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         newsAdapter = new NewsAdapter();
 
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -74,7 +73,7 @@ public class NewsFragment extends Fragment {
 
 
     /*获取头条信息*/
-    public void pullNewsData() {
+    private void pullNewsData() {
         Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {

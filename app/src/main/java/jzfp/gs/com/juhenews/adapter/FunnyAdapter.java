@@ -17,11 +17,12 @@ import jzfp.gs.com.juhenews.gsonbean.funnybean.FunnyBean;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
 public class FunnyAdapter extends RecyclerView.Adapter {
-    List<FunnyBean.ResultBean.DataBean> funnyData;
-    Context context;
+    private List<FunnyBean.ResultBean.DataBean> funnyData;
+    private Context context;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -61,8 +62,9 @@ public class FunnyAdapter extends RecyclerView.Adapter {
     }
 
     class FunnyViewHolder extends RecyclerView.ViewHolder {
-        public TextView content, date;
-        public ImageView gif;
+        public final TextView content;
+        public final TextView date;
+        public final ImageView gif;
 
 
         public FunnyViewHolder(View itemView) {

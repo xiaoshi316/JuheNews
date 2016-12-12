@@ -5,12 +5,7 @@
     <color name="colorAccent">#d43d3d</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorSelected">#3EC01A</color>
-    <color name="colorTopBackGround">#393a3f</color>
     <color name="colorToolbar">#d43d3d</color>
     <color name="colorTabNormal">#f2c4c4</color>
-    <color name="colorTabSelected">#ffffff</color>
     <color name="colorComment">#888888</color>
-    <color name="colorNavigationBg">#2b2f3e</color>
-    <color name="colorSkipBg">#33f6f5f4</color>
 </resources>

@@ -109,7 +109,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 if (sharedPreferences != null) {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("PROFILE", path);
-                    editor.commit();
+                    editor.apply();
                 }
             }
 

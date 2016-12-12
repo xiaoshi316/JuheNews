@@ -21,11 +21,12 @@ import jzfp.gs.com.juhenews.gsonbean.newsbean.NewsData;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
 public class NewsAdapter extends RecyclerView.Adapter {
-    List<NewsData> newsData;
-    Context context;
+    private List<NewsData> newsData;
+    private Context context;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -85,8 +86,12 @@ public class NewsAdapter extends RecyclerView.Adapter {
 
 
     class NewsViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, author, date;
-        public ImageView pic1, pic2, pic3;
+        public final TextView title;
+        public final TextView author;
+        public final TextView date;
+        public final ImageView pic1;
+        public final ImageView pic2;
+        public final ImageView pic3;
 
 
         public NewsViewHolder(View itemView) {

@@ -10,17 +10,19 @@ import okhttp3.Response;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
+@SuppressWarnings("deprecation")
 public class OkhttpUtils {
-    public static final String JOKE_URL = "http://japi.juhe.cn/joke/content/text.from?key=facd3f89a62400877ee559778e89bb6c&page=1&pagesize=20";
-    public static final String FUNNY_URL = "http://japi.juhe.cn/joke/img/text.from?key=facd3f89a62400877ee559778e89bb6c&page=1&pagesize=20";
+    private static final String JOKE_URL = "http://japi.juhe.cn/joke/content/text.from?key=facd3f89a62400877ee559778e89bb6c&page=1&pagesize=20";
+    private static final String FUNNY_URL = "http://japi.juhe.cn/joke/img/text.from?key=facd3f89a62400877ee559778e89bb6c&page=1&pagesize=20";
 
-    public static final String NEWS_URL = "http://v.juhe.cn/toutiao/index?type=top&key=53555bf8010e1bf9c42cc0f9fbe8578a";
-    public static final String HISTORY_URL = "http://api.juheapi.com/japi/toh?key=e5819f08efaa65bc97a7ef93de55cc46&v=1.0";
+    private static final String NEWS_URL = "http://v.juhe.cn/toutiao/index?type=top&key=53555bf8010e1bf9c42cc0f9fbe8578a";
+    private static final String HISTORY_URL = "http://api.juheapi.com/japi/toh?key=e5819f08efaa65bc97a7ef93de55cc46&v=1.0";
 
 
-    public static OkHttpClient okHttpClient = new OkHttpClient();
+    private static final OkHttpClient okHttpClient = new OkHttpClient();
 
     /*获取笑话信息*/
     public static String getJokes() {
@@ -33,7 +35,7 @@ public class OkhttpUtils {
     }
 
     /*通过URL获取对应的内容信息*/
-    public static String getContentByURL(String url) {
+    private static String getContentByURL(String url) {
         Request request = new Request.Builder().url(url).get().build();
         try {
             Response response = okHttpClient.newCall(request).execute();
@@ -46,7 +48,7 @@ public class OkhttpUtils {
         return null;
     }
 
-    public static String getHistoryOnTodayURL() {
+    private static String getHistoryOnTodayURL() {
         Time time = new Time("GMT+8");
         time.setToNow();
         return (HISTORY_URL + "&month=" + (time.month + 1) + "&day=" + time.monthDay);

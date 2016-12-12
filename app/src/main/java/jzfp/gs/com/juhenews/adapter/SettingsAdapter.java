@@ -17,6 +17,7 @@ import jzfp.gs.com.juhenews.R;
 
 /**
  * Created by lisa on 2016/12/9.
+ * Email: 457420045@qq.com
  */
 
 public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -38,18 +39,16 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         View view;
         if (viewType == ITEM_TYPE_IMAGE) {
             view = LayoutInflater.from(context).inflate(R.layout.settings_item_image, null, false);
-            ViewHolderImage viewHolderImage = new ViewHolderImage(view);
-            return viewHolderImage;
+            return  new ViewHolderImage(view);
         } else if (viewType == ITEM_TYPE_TEXT) {
             view = LayoutInflater.from(context).inflate(R.layout.settings_item_text, null, false);
-            ViewHolderText viewHolderText = new ViewHolderText(view);
-            return viewHolderText;
+            return  new ViewHolderText(view);
         }
         return null;
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof ViewHolderImage) {
             ViewHolderImage viewHolderImage = (ViewHolderImage) holder;
             viewHolderImage.tvTitle.setText(options[position]);
@@ -60,21 +59,22 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             viewHolderText.tvContent.setText(sp.getString(options[position], null));
         }
+        final int localposition = position;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final EditText editText = new EditText(context);
-                editText.setText(sp.getString(options[position], null));
-                editText.setHint("请输入" + options[position]);
+                editText.setText(sp.getString(options[localposition], null));
+                editText.setHint("请输入" + options[localposition]);
                 AlertDialog.Builder builder = new AlertDialog.Builder(context)
-                        .setTitle(options[position])
+                        .setTitle(options[localposition])
                         .setView(editText)
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 SharedPreferences.Editor editor = sp.edit();
-                                editor.putString(options[position], editText.getText().toString());
-                                editor.commit();
+                                editor.putString(options[localposition], editText.getText().toString());
+                                editor.apply();
                                 notifyDataSetChanged();
                             }
                         })
@@ -106,8 +106,8 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     class ViewHolderImage extends RecyclerView.ViewHolder {
-        TextView tvTitle;
-        CircleImageView civContent;
+        final TextView tvTitle;
+        final CircleImageView civContent;
 
         public ViewHolderImage(View itemView) {
             super(itemView);
@@ -117,7 +117,8 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     class ViewHolderText extends RecyclerView.ViewHolder {
-        TextView tvTitle, tvContent;
+        final TextView tvTitle;
+        final TextView tvContent;
 
         public ViewHolderText(View itemView) {
             super(itemView);

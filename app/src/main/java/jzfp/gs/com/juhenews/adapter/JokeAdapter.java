@@ -14,10 +14,11 @@ import jzfp.gs.com.juhenews.gsonbean.jokebean.JokeBean;
 
 /**
  * Created by lisa on 2016/12/2.
+ * Email: 457420045@qq.com
  */
 
 public class JokeAdapter extends RecyclerView.Adapter {
-    List<Data> jokeData;
+    private List<Data> jokeData;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -45,8 +46,8 @@ public class JokeAdapter extends RecyclerView.Adapter {
     }
 
     class JokeViewHolder extends RecyclerView.ViewHolder {
-        TextView content;
-        TextView updateTime;
+        final TextView content;
+        final TextView updateTime;
 
         public JokeViewHolder(View itemView) {
             super(itemView);

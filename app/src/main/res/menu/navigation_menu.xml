@@ -4,21 +4,21 @@
         <item
             android:id="@+id/news"
             android:icon="@drawable/news"
-            android:title="新闻头条"></item>
+            android:title="@string/news_title"/>
 
         <item
             android:id="@+id/joke"
             android:icon="@drawable/joke"
-            android:title="笑话大全"></item>
+            android:title="@string/joke_title"/>
 
         <item
             android:id="@+id/funny"
             android:icon="@drawable/funny"
-            android:title="趣  图"></item>
+            android:title="@string/funny_title"/>
 
         <item
             android:id="@+id/history"
             android:icon="@drawable/history"
-            android:title="历史上的今天"></item>
+            android:title="@string/history_title"/>
     </group>
 </menu>

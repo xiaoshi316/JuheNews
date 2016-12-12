@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">我的头条</string>
     <string name="share">Share</string>
+    <string name="skip_ad">跳过广告</string>
+    <string name="news_title">新闻头条</string>
+    <string name="joke_title">笑话大全</string>
+    <string name="funny_title">趣 图</string>
+    <string name="history_title">历史上的今天</string>
 </resources>
