@@ -3,5 +3,5 @@
     <corners android:radius="3dp" />
     <solid
         android:width="1dp"
-        android:color="@color/colorComment" />
+        android:color="@color/colorSkipBg" />
 </shape>
