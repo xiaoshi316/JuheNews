@@ -18,14 +18,12 @@ import jzfp.gs.com.juhenews.R;
  * Email: 457420045@qq.com
  */
 
+@SuppressWarnings("deprecation")
 public class BaseFragment extends Fragment {
     @BindView(R.id.swipe_container)
     SwipeRefreshLayout swipeRefreshLayout;
     @BindView(R.id.rv_content)
     RecyclerView recyclerView;
-
-    private RecyclerView.Adapter baseAdapter;
-    private RecyclerView.LayoutManager layoutManager;
 
     @Nullable
     @Override
@@ -36,8 +34,6 @@ public class BaseFragment extends Fragment {
         View view = inflater.inflate(R.layout.base_fragment, container, false);
         ButterKnife.bind(this, view);
 
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(baseAdapter);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -54,13 +50,5 @@ public class BaseFragment extends Fragment {
     }
 
     public void pullData() {
-    }
-
-    public void setAdapter() {
-
-    }
-
-    public void setLayoutManager() {
-
     }
 }

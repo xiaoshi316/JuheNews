@@ -46,21 +46,21 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             viewHolderText.tvContent.setText(sp.getString(options[position], null));
         }
-        final int localposition = position;
+        final int local = position;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final EditText editText = new EditText(context);
-                editText.setText(sp.getString(options[localposition], null));
-                editText.setHint("请输入" + options[localposition]);
+                editText.setText(sp.getString(options[local], null));
+                editText.setHint("请输入" + options[local]);
                 AlertDialog.Builder builder = new AlertDialog.Builder(context)
-                        .setTitle(options[localposition])
+                        .setTitle(options[local])
                         .setView(editText)
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 SharedPreferences.Editor editor = sp.edit();
-                                editor.putString(options[localposition], editText.getText().toString());
+                                editor.putString(options[local], editText.getText().toString());
                                 editor.apply();
                                 notifyDataSetChanged();
                             }

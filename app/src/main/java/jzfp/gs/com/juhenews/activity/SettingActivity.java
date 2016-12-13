@@ -12,24 +12,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.io.File;
 import java.util.ArrayList;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.fragment.SettingsFragment;
 import me.iwf.photopicker.PhotoPicker;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private CircleImageView circleImageViewProfile = null;
+    private ImageView circleImageViewProfile = null;
     private SharedPreferences sharedPreferences = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting_preference);
+        setContentView(R.layout.activity_setting);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.back);
@@ -39,7 +39,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);//getSharedPreferences("jzfp.gs.com.juhenews_preferences.xml", MODE_PRIVATE);
 
-        circleImageViewProfile = (CircleImageView) findViewById(R.id.civ_image);
+        circleImageViewProfile = (ImageView) findViewById(R.id.civ_image);
         circleImageViewProfile.setOnClickListener(this);
         String path = sharedPreferences.getString("PROFILE", null);
         if (path != null) {
