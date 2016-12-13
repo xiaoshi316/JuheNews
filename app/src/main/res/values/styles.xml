@@ -12,7 +12,12 @@
     <style name="ToolBarTextAppearance">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#FFFFFF</item>
-
     </style>
+    <style name="ExpandedText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+
 
 </resources>
