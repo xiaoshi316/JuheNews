@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/welcomehead" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

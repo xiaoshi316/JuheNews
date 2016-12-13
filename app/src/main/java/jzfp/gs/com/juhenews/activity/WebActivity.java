@@ -1,6 +1,7 @@
 package jzfp.gs.com.juhenews.activity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
@@ -42,6 +43,11 @@ public class WebActivity extends AppCompatActivity {
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
+        webView.getSettings().setJavaScriptEnabled(true);//启用js
+        webView.getSettings().setBlockNetworkImage(false);//解决图片不显示
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
         webView.loadUrl(URL);
 
     }
