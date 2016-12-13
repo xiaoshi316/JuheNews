@@ -18,13 +18,13 @@
             android:padding="6dp">
 
             <TextView
-                android:id="@+id/tv_content"
+                android:id="@+id/tv_joke_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack" />
 
             <TextView
-                android:id="@+id/tv_currenttime"
+                android:id="@+id/tv_joke_updatetime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
