@@ -21,6 +21,9 @@ import android.widget.TextView;
 import java.io.File;
 import java.util.HashMap;
 
+import butterknife.BindArray;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.adapter.MainPagerAdapter;
@@ -42,22 +45,28 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             put(R.id.history, 3);
         }
     };
-    private ViewPager viewPager = null;
-    private NavigationView navigationView = null;
-    private DrawerLayout drawerLayout = null;
-    private CircleImageView circleImageView = null;
-    private TextView textViewName = null, textViewEmail = null;
-    private String[] options = null;
+
+    @BindView(R.id.vp_content)
+    ViewPager viewPager = null;
+    @BindView(R.id.nv_left)
+    NavigationView navigationView = null;
+    @BindView(R.id.dl_main)
+    DrawerLayout drawerLayout = null;
+    @BindView(R.id.tab_title)
+    TabLayout tabLayout = null;
+    @BindArray(R.array.setting_options)
+    String[] options = null;
+
+    CircleImageView circleImageView = null;
+    TextView textViewName = null;
+    TextView textViewEmail = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        options = getResources().getStringArray(R.array.setting_options);
-        drawerLayout = (DrawerLayout) findViewById(R.id.dl_main);
-
-        navigationView = (NavigationView) findViewById(R.id.nv_left);
         navigationView.setNavigationItemSelectedListener(this);
 
         View headerLayout = navigationView.getHeaderView(0); // 0-index header
@@ -73,9 +82,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
 
         MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
-        viewPager = (ViewPager) findViewById(R.id.vp_content);
         viewPager.setAdapter(mainPagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -92,7 +101,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_title);
         //设置TabLayout的模式
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         //为TabLayout添加tab名称

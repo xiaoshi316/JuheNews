@@ -12,6 +12,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.gsonbean.historybean.HistoryBean;
 
@@ -63,19 +65,18 @@ public class HistoryAdapter extends RecyclerView.Adapter {
     }
 
     class HistoryViewHolder extends RecyclerView.ViewHolder {
-        public final TextView title;
-        public final TextView content;
-        public final TextView date;
-        public final ImageView pic;
-
+        @BindView(R.id.tv_history_title)
+        public TextView title;
+        @BindView(R.id.tv_history_content)
+        public TextView content;
+        @BindView(R.id.tv_history_date)
+        public TextView date;
+        @BindView(R.id.iv_history_pic)
+        public ImageView pic;
 
         public HistoryViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.tv_history_title);
-            content = (TextView) itemView.findViewById(R.id.tv_history_content);
-            date = (TextView) itemView.findViewById(R.id.tv_history_date);
-            pic = (ImageView) itemView.findViewById(R.id.iv_history_pic);
-
+            ButterKnife.bind(this, itemView);
         }
 
     }

@@ -24,9 +24,9 @@ public class WebActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        if(bundle!=null) {
+        if (bundle != null) {
             Bundle temp = bundle.getBundle("extra");
-            if(temp!= null) {
+            if (temp != null) {
                 URL = temp.getString("URL");
             }
         }

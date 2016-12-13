@@ -2,9 +2,6 @@ package jzfp.gs.com.juhenews.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.google.gson.Gson;
 
-import jzfp.gs.com.juhenews.R;
+import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.adapter.HistoryAdapter;
 import jzfp.gs.com.juhenews.gsonbean.historybean.HistoryBean;
 import jzfp.gs.com.juhenews.utils.OkhttpUtils;
@@ -28,8 +25,7 @@ import rx.schedulers.Schedulers;
  */
 
 @SuppressWarnings("deprecation")
-public class HistoryFragment extends Fragment {
-    private SwipeRefreshLayout swipeRefreshLayout;
+public class HistoryFragment extends BaseFragment {
     private HistoryAdapter historyAdapter;
 
     /*
@@ -45,37 +41,19 @@ public class HistoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-
-        //      create main panel for fragment
-        View view = inflater.inflate(R.layout.base_fragment, container, false);
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.tv_content);
+        View view = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, view);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-
         historyAdapter = new HistoryAdapter();
 
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
         recyclerView.setAdapter(historyAdapter);
-
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                swipeRefreshLayout.setRefreshing(true);
-                pullHistoryData();
-            }
-        });
-        swipeRefreshLayout.setRefreshing(true);
-        pullHistoryData();
-        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(android.R.color.holo_blue_bright),
-                getResources().getColor(android.R.color.holo_green_light),
-                getResources().getColor(android.R.color.holo_orange_light));
         return view;
     }
 
 
-    /*获取头条信息*/
-    private void pullHistoryData() {
+    @Override
+    public void pullData() {
         Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {

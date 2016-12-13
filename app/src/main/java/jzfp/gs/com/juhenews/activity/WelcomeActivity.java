@@ -14,7 +14,7 @@ import jzfp.gs.com.juhenews.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    private  final Handler splashHandler = new Handler() {
+    private final Handler splashHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);

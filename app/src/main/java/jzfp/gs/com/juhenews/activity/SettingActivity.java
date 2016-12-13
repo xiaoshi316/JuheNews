@@ -41,11 +41,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         circleImageViewProfile = (CircleImageView) findViewById(R.id.civ_image);
         circleImageViewProfile.setOnClickListener(this);
-        String imagepath = sharedPreferences.getString("PROFILE", null);
-        if (imagepath != null) {
-            File file = new File(imagepath);
+        String path = sharedPreferences.getString("PROFILE", null);
+        if (path != null) {
+            File file = new File(path);
             if (file.exists()) {
-                Bitmap bitmap = BitmapFactory.decodeFile(imagepath);
+                Bitmap bitmap = BitmapFactory.decodeFile(path);
                 circleImageViewProfile.setImageBitmap(bitmap);
             }
         }

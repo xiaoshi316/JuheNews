@@ -12,6 +12,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.gsonbean.funnybean.FunnyBean;
 
@@ -62,16 +64,17 @@ public class FunnyAdapter extends RecyclerView.Adapter {
     }
 
     class FunnyViewHolder extends RecyclerView.ViewHolder {
-        public final TextView content;
-        public final TextView date;
-        public final ImageView gif;
+        @BindView(R.id.tv_funny_title)
+        public TextView content;
+        @BindView(R.id.tv_funny_date)
+        public TextView date;
+        @BindView(R.id.gv_funny_gif)
+        public ImageView gif;
 
 
         public FunnyViewHolder(View itemView) {
             super(itemView);
-            content = (TextView) itemView.findViewById(R.id.tv_funny_title);
-            date = (TextView) itemView.findViewById(R.id.tv_funny_date);
-            gif = (ImageView) itemView.findViewById(R.id.gv_funny_gif);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

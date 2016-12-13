@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.gsonbean.jokebean.Data;
 import jzfp.gs.com.juhenews.gsonbean.jokebean.JokeBean;
@@ -29,8 +31,8 @@ public class JokeAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof JokeViewHolder && jokeData != null) {
-            ((JokeViewHolder) holder).getContentView().setText(jokeData.get(position).getContent());
-            ((JokeViewHolder) holder).getUpdateTimeView().setText(jokeData.get(position).getUpdatetime());
+            ((JokeViewHolder) holder).content.setText(jokeData.get(position).getContent());
+            ((JokeViewHolder) holder).updateTime.setText(jokeData.get(position).getUpdatetime());
         }
     }
 
@@ -46,21 +48,14 @@ public class JokeAdapter extends RecyclerView.Adapter {
     }
 
     class JokeViewHolder extends RecyclerView.ViewHolder {
-        final TextView content;
-        final TextView updateTime;
+        @BindView(R.id.tv_joke_content)
+        public TextView content;
+        @BindView(R.id.tv_joke_updatetime)
+        public TextView updateTime;
 
         public JokeViewHolder(View itemView) {
             super(itemView);
-            content = (TextView) itemView.findViewById(R.id.tv_content);
-            updateTime = (TextView) itemView.findViewById(R.id.tv_currenttime);
-        }
-
-        public TextView getContentView() {
-            return content;
-        }
-
-        public TextView getUpdateTimeView() {
-            return updateTime;
+            ButterKnife.bind(this, itemView);
         }
     }
 }

@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.adapter.SettingsAdapter;
 
@@ -18,11 +20,11 @@ import jzfp.gs.com.juhenews.adapter.SettingsAdapter;
  */
 
 public class SettingsFragment extends Fragment {
+    @BindView(R.id.rv_settings)
+    RecyclerView recyclerView = null;
 
     public static SettingsFragment newInstance() {
-
         Bundle args = new Bundle();
-
         SettingsFragment fragment = new SettingsFragment();
         fragment.setArguments(args);
         return fragment;
@@ -33,7 +35,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_settings, container, false);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.tv_settings);
+        ButterKnife.bind(this, view);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         SettingsAdapter settingsAdapter = new SettingsAdapter(getContext(), getResources().getStringArray(R.array.setting_options));

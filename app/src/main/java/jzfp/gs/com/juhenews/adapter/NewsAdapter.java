@@ -14,6 +14,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.activity.WebActivity;
 import jzfp.gs.com.juhenews.gsonbean.newsbean.NewsBean;
@@ -86,22 +88,23 @@ public class NewsAdapter extends RecyclerView.Adapter {
 
 
     class NewsViewHolder extends RecyclerView.ViewHolder {
-        public final TextView title;
-        public final TextView author;
-        public final TextView date;
-        public final ImageView pic1;
-        public final ImageView pic2;
-        public final ImageView pic3;
+        @BindView(R.id.tv_news_title)
+        public TextView title;
+        @BindView(R.id.tv_news_author)
+        public TextView author;
+        @BindView(R.id.tv_news_date)
+        public TextView date;
+        @BindView(R.id.iv_news_pic1)
+        public ImageView pic1;
+        @BindView(R.id.iv_news_pic2)
+        public ImageView pic2;
+        @BindView(R.id.iv_news_pic3)
+        public ImageView pic3;
 
 
         public NewsViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.tv_news_title);
-            author = (TextView) itemView.findViewById(R.id.tv_news_author);
-            date = (TextView) itemView.findViewById(R.id.tv_news_date);
-            pic1 = (ImageView) itemView.findViewById(R.id.iv_news_pic1);
-            pic2 = (ImageView) itemView.findViewById(R.id.iv_news_pic2);
-            pic3 = (ImageView) itemView.findViewById(R.id.iv_news_pic3);
+            ButterKnife.bind(this, itemView);
         }
 
     }
