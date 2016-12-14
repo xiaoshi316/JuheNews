@@ -3,22 +3,22 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/news"
-            android:icon="@drawable/news"
+            android:icon="@drawable/news_normal"
             android:title="@string/news_title"/>
 
         <item
             android:id="@+id/joke"
-            android:icon="@drawable/joke"
+            android:icon="@drawable/joke_normal"
             android:title="@string/joke_title"/>
 
         <item
             android:id="@+id/funny"
-            android:icon="@drawable/funny"
+            android:icon="@drawable/funny_normal"
             android:title="@string/funny_title"/>
 
         <item
             android:id="@+id/history"
-            android:icon="@drawable/history"
+            android:icon="@drawable/history_normal"
             android:title="@string/history_title"/>
     </group>
 </menu>

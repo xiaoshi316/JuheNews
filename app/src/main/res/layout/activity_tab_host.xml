@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/colorToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    </android.support.v7.widget.Toolbar>
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- 设置的id必须是 "@android:id/tabcontent"-->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="12">
+                <fragment
+                    android:id="@+id/frag_news"
+                    android:name="jzfp.gs.com.juhenews.fragment.ZixunFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <fragment
+                    android:id="@+id/frag_joke"
+                    android:name="jzfp.gs.com.juhenews.fragment.JokeFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <fragment
+                    android:id="@+id/frag_funny"
+                    android:name="jzfp.gs.com.juhenews.fragment.FunnyFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <fragment
+                    android:id="@+id/frag_history"
+                    android:name="jzfp.gs.com.juhenews.fragment.HistoryFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </FrameLayout>
+
+            <!-- 设置的id必须是android:id="@android:id/tabs" -->
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorBottomBackground"
+                android:showDividers="none"></TabWidget>
+        </LinearLayout>
+    </TabHost>
+</LinearLayout>

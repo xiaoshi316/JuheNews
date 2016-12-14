@@ -26,7 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 import jzfp.gs.com.juhenews.R;
-import jzfp.gs.com.juhenews.adapter.MainPagerAdapter;
+import jzfp.gs.com.juhenews.adapter.NewsPagerAdapter;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static final HashMap<Integer, Integer> sPageMenuMap = new HashMap<Integer, Integer>() {
@@ -81,7 +81,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        NewsPagerAdapter mainPagerAdapter = new NewsPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(mainPagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -104,10 +104,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //设置TabLayout的模式
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         //为TabLayout添加tab名称
-        tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[0]));
-        tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[1]));
-        tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[2]));
-        tabLayout.addTab(tabLayout.newTab().setText(MainPagerAdapter.titles[3]));
+        tabLayout.addTab(tabLayout.newTab().setText(NewsPagerAdapter.titles[0]));
+        tabLayout.addTab(tabLayout.newTab().setText(NewsPagerAdapter.titles[1]));
+        tabLayout.addTab(tabLayout.newTab().setText(NewsPagerAdapter.titles[2]));
+        tabLayout.addTab(tabLayout.newTab().setText(NewsPagerAdapter.titles[3]));
         tabLayout.setupWithViewPager(viewPager);
 
     }

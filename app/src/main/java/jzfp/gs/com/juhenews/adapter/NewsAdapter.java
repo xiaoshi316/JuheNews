@@ -4,12 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,6 +24,8 @@ import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.activity.WebActivity;
 import jzfp.gs.com.juhenews.gsonbean.newsbean.NewsBean;
 import jzfp.gs.com.juhenews.gsonbean.newsbean.NewsData;
+
+import static android.view.View.GONE;
 
 /**
  * Created by lisa on 2016/12/2.
@@ -51,13 +57,19 @@ public class NewsAdapter extends RecyclerView.Adapter {
             String pic2path = data.getThumbnail_pic_s02();
             String pic3path = data.getThumbnail_pic_s03();
             if (pic1path != null) {
-                Picasso.with(context).load(pic1path).into(newsViewHolder.pic1);
+                Glide.with(context).load(pic1path).placeholder(R.mipmap.loading).crossFade().into(newsViewHolder.pic1);
+            } else {
+                newsViewHolder.pic1.setVisibility(GONE);
             }
             if (pic2path != null) {
-                Picasso.with(context).load(pic1path).into(newsViewHolder.pic2);
+                Glide.with(context).load(pic1path).placeholder(R.mipmap.loading).crossFade().into(newsViewHolder.pic2);
+            } else {
+                newsViewHolder.pic2.setVisibility(GONE);
             }
             if (pic3path != null) {
-                Picasso.with(context).load(pic1path).into(newsViewHolder.pic3);
+                Glide.with(context).load(pic1path).placeholder(R.mipmap.loading).crossFade().into(newsViewHolder.pic3);
+            } else {
+                newsViewHolder.pic3.setVisibility(GONE);
             }
 
             final String url = data.getUrl();
@@ -108,4 +120,5 @@ public class NewsAdapter extends RecyclerView.Adapter {
         }
 
     }
+
 }

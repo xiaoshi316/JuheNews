@@ -9,4 +9,6 @@
     <color name="colorTabNormal">#f2c4c4</color>
     <color name="colorComment">#888888</color>
     <color name="colorSkipBg">#44888888</color>
+    <color name="colorBottomBackground">#f4f5f6</color>
+    <color name="colorBottomSelected">#f85959</color>
 </resources>

@@ -42,7 +42,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void directToHome() {
         Intent intent = new Intent();
-        intent.setClass(WelcomeActivity.this, HomeActivity.class);
+        intent.setClass(WelcomeActivity.this, TabHostActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.scalein, R.anim.scaleout);
         finish();

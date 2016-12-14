@@ -25,15 +25,26 @@ import rx.schedulers.Schedulers;
 
 public class NewsFragment extends BaseFragment {
     private NewsAdapter newsAdapter;
-
+    private String type = null;
     /*
      * new instance 方法 获取JokeFragment
      */
-    public static NewsFragment newInstance() {
+    public static NewsFragment newInstance(String type) {
         Bundle args = new Bundle();
         NewsFragment fragment = new NewsFragment();
+        args.putString("TYPE", type);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle args = getArguments();
+        if(args!= null) {
+            type = args.getString("TYPE");
+            System.err.println("yidong -- type = "+ type);
+        }
     }
 
     @Nullable
@@ -53,7 +64,7 @@ public class NewsFragment extends BaseFragment {
         Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
-                String response = OkhttpUtils.getNews();
+                String response = OkhttpUtils.getNews(type);
                 subscriber.onNext(response);
                 subscriber.onCompleted();
             }
