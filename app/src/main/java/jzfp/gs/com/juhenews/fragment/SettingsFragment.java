@@ -33,13 +33,10 @@ public class SettingsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         ButterKnife.bind(this, view);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         SettingsAdapter settingsAdapter = new SettingsAdapter(getContext(), getResources().getStringArray(R.array.setting_options));
-
         recyclerView.setAdapter(settingsAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
         return view;

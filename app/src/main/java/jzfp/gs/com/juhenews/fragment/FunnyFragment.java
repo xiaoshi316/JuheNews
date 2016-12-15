@@ -27,16 +27,6 @@ import rx.schedulers.Schedulers;
 public class FunnyFragment extends BaseFragment {
     private FunnyAdapter funnyAdapter;
 
-    /*
-     * new instance 方法 FunnyFragment
-     */
-    public static FunnyFragment newInstance() {
-        Bundle args = new Bundle();
-        FunnyFragment fragment = new FunnyFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

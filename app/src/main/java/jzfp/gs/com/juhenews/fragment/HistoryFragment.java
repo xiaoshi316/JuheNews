@@ -28,16 +28,6 @@ import rx.schedulers.Schedulers;
 public class HistoryFragment extends BaseFragment {
     private HistoryAdapter historyAdapter;
 
-    /*
-     * new instance 方法 HistoryFragment
-     */
-    public static HistoryFragment newInstance() {
-        Bundle args = new Bundle();
-        HistoryFragment fragment = new HistoryFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

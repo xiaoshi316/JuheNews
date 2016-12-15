@@ -43,7 +43,6 @@ public class NewsFragment extends BaseFragment {
         Bundle args = getArguments();
         if(args!= null) {
             type = args.getString("TYPE");
-            System.err.println("yidong -- type = "+ type);
         }
     }
 
@@ -51,7 +50,6 @@ public class NewsFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         newsAdapter = new NewsAdapter();
         recyclerView.setLayoutManager(linearLayoutManager);

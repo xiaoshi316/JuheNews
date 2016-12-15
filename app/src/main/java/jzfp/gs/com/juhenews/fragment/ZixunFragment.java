@@ -32,13 +32,8 @@ public class ZixunFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_zixun, container, false);
         ButterKnife.bind(this, view);
-
-        // Initialize the ViewPager and set an adapter
         viewPager.setAdapter(new NewsPagerAdapter(getFragmentManager()));
-
-        // Bind the tabs to the ViewPager
         pagerSlidingTabStrip.setViewPager(viewPager);
-
         return view;
     }
 }
