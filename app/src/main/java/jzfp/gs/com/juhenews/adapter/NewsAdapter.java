@@ -4,17 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -23,7 +19,6 @@ import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.activity.WebActivity;
 import jzfp.gs.com.juhenews.gsonbean.newsbean.NewsBean;
-import jzfp.gs.com.juhenews.gsonbean.newsbean.NewsData;
 
 import static android.view.View.GONE;
 
@@ -33,7 +28,7 @@ import static android.view.View.GONE;
  */
 
 public class NewsAdapter extends RecyclerView.Adapter {
-    private List<NewsData> newsData;
+    private List<NewsBean.ResultBean.DataBean> newsData;
     private Context context;
 
     @Override
@@ -47,7 +42,7 @@ public class NewsAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof NewsViewHolder && newsData != null) {
             NewsViewHolder newsViewHolder = (NewsViewHolder) holder;
-            NewsData data = newsData.get(position);
+            NewsBean.ResultBean.DataBean data = newsData.get(position);
 
             newsViewHolder.title.setText(data.getTitle());
             newsViewHolder.author.setText(data.getAuthor_name());

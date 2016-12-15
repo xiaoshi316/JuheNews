@@ -11,7 +11,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.R;
-import jzfp.gs.com.juhenews.gsonbean.jokebean.Data;
 import jzfp.gs.com.juhenews.gsonbean.jokebean.JokeBean;
 
 /**
@@ -20,7 +19,7 @@ import jzfp.gs.com.juhenews.gsonbean.jokebean.JokeBean;
  */
 
 public class JokeAdapter extends RecyclerView.Adapter {
-    private List<Data> jokeData;
+    private List<JokeBean.Data> jokeData;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

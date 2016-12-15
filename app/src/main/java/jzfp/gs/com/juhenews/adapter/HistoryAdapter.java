@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ public class HistoryAdapter extends RecyclerView.Adapter {
             String pic = resultBean.getPic();
             if (pic != null && !pic.isEmpty()) {
                 historyViewHolder.pic.setVisibility(View.VISIBLE);
-                Picasso.with(context).load(pic).into(historyViewHolder.pic);
+                Glide.with(context).load(pic).placeholder(R.drawable.share).crossFade().into(historyViewHolder.pic);
             } else {
                 historyViewHolder.pic.setVisibility(View.GONE);
             }
