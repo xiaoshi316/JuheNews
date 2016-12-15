@@ -6,16 +6,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnTextChanged;
 import jzfp.gs.com.juhenews.R;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity{
 
 
     @BindView(R.id.et_search)
@@ -37,16 +37,22 @@ public class SearchActivity extends AppCompatActivity {
 
         toolbarSearch.setNavigationIcon(R.drawable.back);
         setSupportActionBar(toolbarSearch);
-
     }
 
     @OnClick({R.id.tv_search})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.search:
-                break;
-            default:
-                break;
+    public void onClick() {
+        if(etSearch.getText().toString()!= null) {
+
         }
     }
+
+    @OnTextChanged(R.id.et_search)
+    public void onTextChange(CharSequence text){
+        if(text!= null) {
+            tvSearch.setTextColor(getResources().getColor(R.color.colorBlack));
+        } else {
+            tvSearch.setTextColor(getResources().getColor(R.color.colorComment));
+        }
+    }
+
 }

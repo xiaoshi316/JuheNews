@@ -35,9 +35,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         toolbar.setNavigationIcon(R.drawable.back);
         setSupportActionBar(toolbar);
         toolbar.setTitleTextAppearance(this, R.style.ToolBarTextAppearance);
-
-
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);//getSharedPreferences("jzfp.gs.com.juhenews_preferences.xml", MODE_PRIVATE);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         circleImageViewProfile = (ImageView) findViewById(R.id.civ_image);
         circleImageViewProfile.setOnClickListener(this);
@@ -49,11 +47,8 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 circleImageViewProfile.setImageBitmap(bitmap);
             }
         }
-
         SettingsFragment settingFragment = SettingsFragment.newInstance();
-
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, settingFragment).commit();
-
     }
 
     @Override
@@ -81,7 +76,6 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.civ_image: {
-                System.err.println("yidong -- onClick");
                 PhotoPicker.builder()
                         .setPhotoCount(1)
                         .setShowCamera(true)
@@ -112,8 +106,6 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                     editor.apply();
                 }
             }
-
-
         }
     }
 }
