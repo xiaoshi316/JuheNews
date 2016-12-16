@@ -44,6 +44,7 @@ public class HistoryFragment extends BaseFragment {
 
     @Override
     public void pullData() {
+        super.pullData();
         Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
@@ -54,7 +55,7 @@ public class HistoryFragment extends BaseFragment {
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<String>() {
             @Override
             public void onNext(String response) {
-                swipeRefreshLayout.setRefreshing(true);
+                //swipeRefreshLayout.setRefreshing(true);
                 Gson gson = new Gson();
                 HistoryBean historyBean = gson.fromJson(response, HistoryBean.class);
                 historyAdapter.setHistory(historyBean);

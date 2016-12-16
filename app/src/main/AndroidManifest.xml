@@ -3,6 +3,9 @@
     package="jzfp.gs.com.juhenews">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 在sdcard中创建/删除文件的权限 -->
@@ -37,7 +40,7 @@
         </activity>
         <activity android:name="me.iwf.photopicker.PhotoPickerActivity" />
         <activity android:name=".activity.TabHostActivity" />
-        <activity android:name=".activity.SearchActivity"></activity>
+        <activity android:name=".activity.SearchActivity" />
     </application>
 
 </manifest>

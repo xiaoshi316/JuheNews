@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 import jzfp.gs.com.juhenews.R;
 import jzfp.gs.com.juhenews.activity.WebActivity;
 import jzfp.gs.com.juhenews.gsonbean.newsbean.NewsBean;
+import jzfp.gs.com.juhenews.gsonbean.querynewsbean.QueryNewsBean;
 
 import static android.view.View.GONE;
 
@@ -27,9 +28,9 @@ import static android.view.View.GONE;
  * Email: 457420045@qq.com
  */
 
-public class NewsAdapter extends RecyclerView.Adapter {
-    private List<NewsBean.ResultBean.DataBean> newsData;
-    Context context;
+public class QueryNewsAdapter extends RecyclerView.Adapter {
+    private List<QueryNewsBean.ResultBean> newsData;
+    private Context context;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -42,13 +43,13 @@ public class NewsAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof NewsViewHolder && newsData != null) {
             NewsViewHolder newsViewHolder = (NewsViewHolder) holder;
-            NewsBean.ResultBean.DataBean data = newsData.get(position);
+            QueryNewsBean.ResultBean data = newsData.get(position);
 
             newsViewHolder.title.setText(data.getTitle());
-            newsViewHolder.author.setText(data.getAuthor_name());
-            newsViewHolder.date.setText(data.getDate());
+            newsViewHolder.author.setText(data.getSrc());
+            newsViewHolder.date.setText(data.getPdate());
 
-            String pic1path = data.getThumbnail_pic_s();
+            String pic1path = data.getImg();
             if (pic1path != null) {
                 Glide.with(context).load(pic1path).placeholder(R.mipmap.loading).crossFade().into(newsViewHolder.pic1);
             } else {
@@ -76,8 +77,9 @@ public class NewsAdapter extends RecyclerView.Adapter {
         return 0;
     }
 
-    public void setNews(NewsBean newsBean) {
-        this.newsData = newsBean.getResult().getData();
+    public void setQueryNews(QueryNewsBean newsBean) {
+        this.newsData = newsBean.getResult();
+        System.err.println("yidong -- newsData = " + newsData);
         notifyDataSetChanged();
     }
 

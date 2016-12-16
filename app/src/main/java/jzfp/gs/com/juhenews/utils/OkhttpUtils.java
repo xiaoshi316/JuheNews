@@ -1,5 +1,8 @@
 package jzfp.gs.com.juhenews.utils;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.text.format.Time;
 
 import java.io.IOException;
@@ -19,10 +22,8 @@ public class OkhttpUtils {
     private static final String FUNNY_URL = "http://japi.juhe.cn/joke/img/text.from?key=facd3f89a62400877ee559778e89bb6c&page=1&pagesize=20";
 
     private static final String HISTORY_URL = "http://api.juheapi.com/japi/toh?key=e5819f08efaa65bc97a7ef93de55cc46&v=1.0";
-    /*	类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),
-    tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)*/
-    private static final String NEWS_URL = "http://v.juhe.cn/toutiao/index?type=top&key=53555bf8010e1bf9c42cc0f9fbe8578a";
 
+    private static final String NEWS_URL = "http://op.juhe.cn/onebox/news/query?key=a74ca9043842d6cfe2704f4b765ce2b9&q=";
 
     private static final OkHttpClient okHttpClient = new OkHttpClient();
 
@@ -33,7 +34,7 @@ public class OkhttpUtils {
 
     /*获取新闻头条信息*/
     public static String getNews(String type) {
-        String URL = "http://v.juhe.cn/toutiao/index?type="+ type + "&key=53555bf8010e1bf9c42cc0f9fbe8578a";
+        String URL = "http://v.juhe.cn/toutiao/index?type=" + type + "&key=53555bf8010e1bf9c42cc0f9fbe8578a";
         return getContentByURL(URL);
     }
 
@@ -42,9 +43,8 @@ public class OkhttpUtils {
         Request request = new Request.Builder().url(url).get().build();
         try {
             Response response = okHttpClient.newCall(request).execute();
-            //response.body().string()只能调用一次
-            return response.body().string();
-
+            String result = response.body().string();//只能调用一次
+            return result;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,4 +64,16 @@ public class OkhttpUtils {
     public static String getFunny() {
         return getContentByURL(FUNNY_URL);
     }
+
+    public static String getCurrentNews(String keyword) {
+        String URL = NEWS_URL + keyword;
+        return getContentByURL(URL);
+    }
+
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo ni = cm.getActiveNetworkInfo();
+        return ( (ni != null && ni.isConnected()));
+    }
+
 }
